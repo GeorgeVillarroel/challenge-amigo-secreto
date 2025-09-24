@@ -30,4 +30,12 @@ function actualizarLista() {
     listaAmigos.innerHTML = nuevoTextoHTML;
 }
 
-/* function sortearAmigo(); */
+function sortearAmigo(){
+    if (nombreAmigos.length > 0) {
+            let listaResultado = document.querySelector("#resultado");
+            let numeroGenerado =  Math.floor(Math.random()*nombreAmigos.length);
+            listaResultado.innerHTML = nombreAmigos[numeroGenerado];
+    } else {
+        alert("Agrega al menos un amigo");
+    }
+}
