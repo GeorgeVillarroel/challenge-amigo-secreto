@@ -10,8 +10,24 @@ function agregarAmigo() {
             nombreAmigos.push(nombreInput.value);
             nombreInput.value = "";
 
+            actualizarLista();
+
     } else {
         alert("Por favor, inserte un nombre.");
     }
 
 }
+
+function actualizarLista() {
+    let listaAmigos = document.querySelector("#listaAmigos");
+    listaAmigos.innerHTML = "";
+    let nuevoTextoHTML = "";
+
+    for(let i = 0; i < nombreAmigos.length ; i++) {
+        nuevoTextoHTML = nuevoTextoHTML + `<li>${nombreAmigos[i]}</li>`;
+    }
+
+    listaAmigos.innerHTML = nuevoTextoHTML;
+}
+
+/* function sortearAmigo(); */
